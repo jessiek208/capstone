@@ -1,0 +1,15 @@
+  
+@import "base.scss";
+
+header{
+    background-color: $headerColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title{
+    text-align: center;
+    font-size: 3em;
+}

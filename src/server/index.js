@@ -27,6 +27,9 @@ app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
 
+
+
+/*
 //creates link for API to utilize and returns response from API to client
 app.post('/analyze', bodyParser.json(), function(req, res) {
     const API_Key = process.env.API_Key;
@@ -52,3 +55,5 @@ app.post('/analyze', bodyParser.json(), function(req, res) {
         })
     })
 });
+
+*/

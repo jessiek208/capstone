@@ -4,23 +4,27 @@
         <meta charset="utf-8">
         <title>Test</title>
         <link rel="shortcut icon" href="#">
-        <!---ADD CSS FILES HERE!-->
+        <link rel="stylesheet" src="/styles/resets.css">
+        <link rel="stylesheet" src="/styles/base.css">
+        <link rel="stylesheet" src="/styles/input.css">
+        <link rel="stylesheet" src="/styles/header.css">
     </head>
 
     <body>
-
         <header>
             <div class="title">
                 Trip Planner
             </div>
         </header>
 
-        <main>
-            <section id="input">
+           <section id="photo">
                 <figure class="destination-image">
-                    <img src="pixabay.com"
+                    <img src="https://via.placeholder.com/150"
                     alt="" />
                 </figure>
+            </section>
+
+                <section id="input">
                 <div class="destination-input">
                     <div class="text-form"
                     <label for="destination">Trip to:</label></br>
@@ -48,19 +52,17 @@
             </section>
 
             <section id="output">
+                <p> output</p>
                 <div id="results"><br>
                     <div id = "trip"></div><br>
                     <div id = "weather"></div><br>
                     <div id = "countdown"></div><br>
                 </div>
             </section>
-        </main>
 
         <footer>
             <p>Jessie K 2021</p>
         </footer>
-        
 
-<script src="app.js" type="text/javascript"></script>
     </body>
 </html>
