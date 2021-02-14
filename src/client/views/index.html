@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <link rel="shortcut icon" href="#">
+        <!---ADD CSS FILES HERE!-->
+    </head>
+
+    <body>
+
+        <header>
+            <div class="title">
+                Trip Planner
+            </div>
+        </header>
+
+        <main>
+            <section id="input">
+                <figure class="destination-image">
+                    <img src="pixabay.com"
+                    alt="" />
+                </figure>
+                <div class="destination-input">
+                    <div class="text-form"
+                    <label for="destination">Trip to:</label></br>
+                    <input type="text" id="destination" placeholder="Enter City or Postal Code">
+                </div>
+
+                <div class="destination-radio">
+                        <input type="radio" id="city" name="search-type" value="city"
+                               checked>
+                        <label for="city">City</label>
+                      
+                        <input type="radio" id="postal-code" name="search-type" value="postal-code">
+                        <label for="postal-code">Postal Code</label>
+                      </div>
+                  </div>
+                  
+                  <div class="departing">
+                  <label for="depart">Departing:</label>
+                    <input type="date" id="depart" name="trip-depart"
+                        
+                        min="2021-03-01" max="2024-12-31">
+                  </div>
+
+                  <button id="submit" type = "submit"> Submit </button>
+            </section>
+
+            <section id="output">
+                <div id="results"><br>
+                    <div id = "trip"></div><br>
+                    <div id = "weather"></div><br>
+                    <div id = "countdown"></div><br>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Jessie K 2021</p>
+        </footer>
+        
+
+<script src="app.js" type="text/javascript"></script>
+    </body>
+</html>
