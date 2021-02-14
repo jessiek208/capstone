@@ -2,6 +2,8 @@ import './styles/reset.scss'
 import './styles/base.scss'
 import './styles/input.scss'
 import './styles/header.scss'
+import './styles/output.scss'
+import './styles/footer.scss'
 
 document.getElementById('submit').addEventListener('click', performAction);
 //when generate is clicked, execute performAction function below
