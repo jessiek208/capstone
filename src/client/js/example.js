@@ -22,7 +22,9 @@ let d = new Date();
 let newDate = (d.getMonth()+1)+'.'+ d.getDate()+'.'+ d.getFullYear();
 */
 
-//Access Weather API with Fetch
+import { countDown } from "./countdown";
+
+//Global Variables
 const baseURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
 const maxRows = '&maxRows=1'
 const apiKey = '&username=jessiek208'
@@ -35,6 +37,8 @@ document.getElementById('submit').addEventListener('click', performAction);
 function performAction(e) {
     const placeName = document.getElementById('destination').value;
     console.log(baseURL + placeName + maxRows + apiKey);
+    const tripDate = document.getElementById('depart').value;
+    Client.countDown(tripDate);
     getLocationData(baseURL, placeName, maxRows, apiKey)
         .then(function (locationData) {
             console.log(locationData);

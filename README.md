@@ -1,5 +1,9 @@
 # capstone
 
+Sources:
+https://medium.com/@drgenejones/proxying-an-external-api-with-webpack-serve-code-and-a-restful-data-from-separate-endpoints-4da9b8daf430
+
+
 Install NPM (npm install)
 Install webpack (npm i webpack webpack-cli )
 Install Babel (npm i -D @babel/core @babel/preset-env babel-loader)
