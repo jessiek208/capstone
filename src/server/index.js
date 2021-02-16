@@ -41,6 +41,8 @@ app.post('/add', addData);
 //opted to pull only required data 
 function addData(req, res){
     console.log('doing it');
-    projectData.latitude = req.body.latitude;
+    projectData.latitude = req.body.latitude[0];
+    projectData.longitude = req.body.latitude[1];
+    console.log(projectData);
     res.send(projectData);
 }

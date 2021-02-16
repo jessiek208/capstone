@@ -3,6 +3,8 @@
 Sources:
 https://medium.com/@drgenejones/proxying-an-external-api-with-webpack-serve-code-and-a-restful-data-from-separate-endpoints-4da9b8daf430
 
+https://codepen.io/rebelchris/pen/gOaZBoo?editors=1111
+
 
 Install NPM (npm install)
 Install webpack (npm i webpack webpack-cli )

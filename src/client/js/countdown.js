@@ -1,4 +1,5 @@
-function countDown(tripDate) {
+function countDown() {
+    const tripDate = document.getElementById('depart').value;
     const date1 = new Date(tripDate);
     const date2 = new Date();
     const difference = date1.getTime() - date2.getTime();

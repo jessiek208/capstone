@@ -3,6 +3,8 @@
 
 header{
     background-color: $headerColor;
+    font-family: $emphasisFont;
+    color: $focusBackground;
     display: flex;
     align-items: center;
     justify-content: center;

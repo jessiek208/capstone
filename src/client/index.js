@@ -1,5 +1,6 @@
 import { performAction, postEntry } from './js/example'
 import { countDown } from './js/countdown'
+import { getWeather } from './js/weather'
 
 import './styles/reset.scss'
 import './styles/base.scss'
@@ -11,7 +12,8 @@ import './styles/footer.scss'
 export {
     performAction, 
     postEntry,
-    countDown
+    countDown,
+    getWeather
 }
 
 //document.getElementById('submit').addEventListener('click', performAction);

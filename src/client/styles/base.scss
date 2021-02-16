@@ -2,6 +2,10 @@ $backgroundColor: #EBF5EE;
 $headerColor: #3B3561;
 $focusBackground: #FFFFFC;
 
+$emphasisFont:'Abril Fatface', Cursive;
+$mainFont:'Poppins', Sans-Serif;
+
+
 body{
     background-color: $backgroundColor;
     display: grid;
@@ -16,6 +20,7 @@ body{
     justify-items: stretch;
     justify-content: space-evenly;
     row-gap: 20px;
+    font-family: $mainFont;
 }
 
 header{
@@ -37,6 +42,5 @@ header{
 footer{
     grid-area: foot;
 }
-
 
 
