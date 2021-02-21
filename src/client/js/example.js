@@ -18,12 +18,16 @@ function performAction(e) {
             console.log(locationData);
             const latitude = locationData.postalCodes[0].lat;
             const longitude = locationData.postalCodes[0].lng;
-            return [latitude, longitude];
-        })
-        .then(function (latitude, longitude) {
-            postEntry('/add', { latitude: latitude, longitude: longitude });
+            const country = locationData.postalCodes[0].countryCode;
+            //return [latitude, longitude];
+            postEntry('/add', { latitude: latitude, longitude: longitude, country: country });
             //updateUI();
             Client.getWeather();
+       // })
+       // .then(function (latitude, longitude) {
+           // postEntry('/add', { latitude: latitude, //longitude: longitude });
+           // //updateUI();
+            //Client.getWeather();
         })
         .catch((err) => {
             console.log(err)
@@ -37,6 +41,7 @@ function performAction(e) {
 //function takes zipcode and fetches data from the API using created link
 const getLocationData = async (baseURL, maxRows, apiKey) => {
     const placeName = document.getElementById('destination').value;
+    console.log(baseURL + placeName + maxRows + apiKey);
     const res = await fetch(baseURL + placeName + maxRows + apiKey);
     const locationData = await res.json();
     return locationData;
