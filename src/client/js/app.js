@@ -1,11 +1,7 @@
-import { countDown } from "./countdown";
-import { getWeather } from "./weather";
-
 //Global Variables
 const baseURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
 const maxRows = '&maxRows=1'
-const apiKey = '&username=jessiek208'
-
+const locationAPIKey = '&username=jessiek208'
 
 
 document.getElementById('submit').addEventListener('click', performAction);
@@ -13,21 +9,15 @@ document.getElementById('submit').addEventListener('click', performAction);
 
 //takes zipcode and uses it in the getTepm function below
 function performAction(e) {
-    getLocationData(baseURL, maxRows, apiKey)
+    getLocationData(baseURL, maxRows, locationAPIKey)
         .then(function (locationData) {
-            console.log(locationData);
             const latitude = locationData.postalCodes[0].lat;
             const longitude = locationData.postalCodes[0].lng;
             const country = locationData.postalCodes[0].countryCode;
-            //return [latitude, longitude];
             postEntry('/add', { latitude: latitude, longitude: longitude, country: country });
-            //updateUI();
             Client.getWeather();
-       // })
-       // .then(function (latitude, longitude) {
-           // postEntry('/add', { latitude: latitude, //longitude: longitude });
-           // //updateUI();
-            //Client.getWeather();
+            Client.getPhoto();
+            Client.tripLength();
         })
         .catch((err) => {
             console.log(err)
@@ -39,10 +29,10 @@ function performAction(e) {
 
 
 //function takes zipcode and fetches data from the API using created link
-const getLocationData = async (baseURL, maxRows, apiKey) => {
-    const placeName = document.getElementById('destination').value;
-    console.log(baseURL + placeName + maxRows + apiKey);
-    const res = await fetch(baseURL + placeName + maxRows + apiKey);
+const getLocationData = async (baseURL, maxRows, locationAPIKey) => {
+    const city = document.getElementById('city').value;
+    const stateCountry = document.getElementById('statecountry').value;
+    const res = await fetch(baseURL + city + ',' + stateCountry + maxRows + locationAPIKey);
     const locationData = await res.json();
     return locationData;
 };
@@ -66,19 +56,5 @@ const postEntry = async (url = '', data = {}) => {
         console.log(error);
     }
 };
-
-//updates UI by pulling data with element IDs and inserting it into divs
-const updateUI = async () => {
-    const request = await fetch('/all');
-    try {
-        const allData = await request.json();
-        console.log(allData);
-        document.getElementById('weather').innerHTML = allData.latitude + ',' + allData.longitude;
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-
 
 export { performAction, postEntry }

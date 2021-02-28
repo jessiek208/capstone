@@ -1,6 +1,6 @@
-import { performAction, postEntry } from './js/example'
-import { countDown } from './js/countdown'
-import { getWeather } from './js/weather'
+import { performAction, postEntry } from './js/app'
+import { countDown, tripLength } from './js/countdown'
+import { getPhoto, getWeather } from './js/photoweather'
 
 import './styles/reset.scss'
 import './styles/base.scss'
@@ -13,7 +13,7 @@ export {
     performAction, 
     postEntry,
     countDown,
-    getWeather
+    tripLength,
+    getWeather,
+    getPhoto
 }
-
-//document.getElementById('submit').addEventListener('click', performAction);

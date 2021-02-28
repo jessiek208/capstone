@@ -15,5 +15,16 @@ function properGrammar (days) {
         document.getElementById('countdown').innerHTML = days + ' days until your trip!'}
 }
 
+function tripLength() {
+    const cityDestination = document.getElementById('city').value;
+    const depart = document.getElementById('depart').value;
+    const returnDate = document.getElementById('return').value;
+    const departDate = new Date(depart);
+    const returningDate = new Date(returnDate);
+    const totalDays = returningDate.getTime() - departDate.getTime();
+    const tripLength = Math.ceil(totalDays / (1000 * 3600 * 24));
+    document.getElementById('trip').innerHTML = `Enjoy your ${tripLength} day trip to ${cityDestination}!`;
+}
 
-export { countDown }
+
+export { countDown, tripLength }

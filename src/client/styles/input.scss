@@ -1,11 +1,15 @@
 @import "base.scss";
 
-#photo{
+#image-holder{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 #input{
     display: flex;
     flex-direction: column;

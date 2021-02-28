@@ -21,25 +21,29 @@
             </div>
         </header>
 
-           <section id="photo">
-                <figure class="destination-image">
-                    <img src="https://via.placeholder.com/150"
+                <div id="image-holder">        
+                    <img id="photo" src="https://cdn.pixabay.com/photo/2015/07/11/23/02/plane-841441_1280.jpg"
                     alt="" />
-                </figure>
-            </section>
+                </div>  
 
                 <section id="input">
-                <div class="destination-input">
+                <div class="destination-input-city">
                     <div class="text-form"
-                    <label for="destination"></label>
-                    <input type="text" id="destination" placeholder="Enter City and State or City and Country">
+                    <label for="city"></label>
+                    <input type="text" id="city" placeholder="Enter City">
+                </div>
+
+                <div class="destination-input-statecountry">
+                    <div class="text-form"
+                    <label for="statecountry"></label>
+                    <input type="text" id="statecountry" placeholder="Enter 2 Digit US State or Country Code">
                 </div>
                   
                   <div class="departing">
                   <label for="depart">Departing:</label>
                     <input type="date" id="depart" name="trip-depart"
                         
-                        min="2021-02-16" max="2024-12-31">
+                        min="2021-02-16" max="2022-03-01">
                   </div>
 
                   <div class="returning">
@@ -53,7 +57,6 @@
             </section>
 
             <section id="output">
-                <p> output</p>
                 <div id="results"><br>
                     <div id = "trip"></div><br>
                     <div id = "weather"></div><br>
