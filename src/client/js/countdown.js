@@ -1,5 +1,5 @@
-function countDown() {
-    const tripDate = document.getElementById('depart').value;
+//takes trip departure date and creates countdown
+function countDown(tripDate) {
     const date1 = new Date(tripDate);
     const date2 = new Date();
     const daysRemaining = date1.getTime() - date2.getTime();
@@ -8,13 +8,15 @@ function countDown() {
     return daysToTrip;
 }
 
+//makes sure countdown is grammatically correct
 function properGrammar (days) {
     if (days ===1) {
-        document.getElementById('countdown').innerHTML = days + ' day until your trip!'
+        document.getElementById('countdown').innerHTML = days + ' day until your trip.'
     } else {
-        document.getElementById('countdown').innerHTML = days + ' days until your trip!'}
+        document.getElementById('countdown').innerHTML = days + ' days until your trip.'}
 }
 
+//finds trip length and writes to HTML body
 function tripLength() {
     const cityDestination = document.getElementById('city').value;
     const depart = document.getElementById('depart').value;
@@ -24,6 +26,7 @@ function tripLength() {
     const totalDays = returningDate.getTime() - departDate.getTime();
     const tripLength = Math.ceil(totalDays / (1000 * 3600 * 24));
     document.getElementById('trip').innerHTML = `Enjoy your ${tripLength} day trip to ${cityDestination}!`;
+    return tripLength;
 }
 
 

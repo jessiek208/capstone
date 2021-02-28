@@ -26,8 +26,6 @@ function performAction(e) {
     
 };
 
-
-
 //function takes zipcode and fetches data from the API using created link
 const getLocationData = async (baseURL, maxRows, locationAPIKey) => {
     const city = document.getElementById('city').value;

@@ -1,3 +1,4 @@
+//global variables
 const basePhotoURL = 'https://pixabay.com/api/?key=';
 const photoAPIKey = '20265960-569dac0c556388eadf818376b';
 const searchStart = '&q=';
@@ -51,21 +52,23 @@ const getCountryPhoto = async (searchTerm) => {
     }
 }
 
-
+//calls weatherbit API based on trip length
 const getWeather = async () => {
+    const tripDate = document.getElementById('depart').value;
+    console.log(tripDate);
     const request = await fetch('/all');
     try {
         const allData = await request.json();
         const lat = allData.latitude;
         const lon = allData.longitude;
-        if (Client.countDown() < 7) {
+        if (Client.countDown(tripDate) < 7) {
             const res = await fetch(weatherForecastURL + weatherLat + lat + weatherLon + lon + weatherAPIKey + weatherUnits);
             const weatherData = await res.json();
             console.log(weatherData);
             const temp = weatherData.data[1].temp;
             const description = weatherData.data[1].weather.description;
             const lowerCaseDescription = description.toLowerCase();
-            document.getElementById('weather').innerHTML = `Forecasted weather for your arrival is ${temp} and ${lowerCaseDescription}.`;
+            document.getElementById('weather').innerHTML = `Forecasted weather for your arrival is ${temp} degrees farenheit and ${lowerCaseDescription}.`;
         } else {
             const startDate = lastYear();
             const endDate = addOne();
@@ -81,7 +84,7 @@ const getWeather = async () => {
     }
 }
 
-
+//finds departure date for trip
 function getDepartureDate () {
     const departureInput = document.getElementById('depart').value;
     return departureInput;
