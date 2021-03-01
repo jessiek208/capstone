@@ -20,4 +20,8 @@ npm i -D style-loader node-sass css-loader sass-loader
 npm i -D html-webpack-plugin
 npm i -D mini-css-extract-plugin
 npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
-npm install --save-dev jest (OR JUST JEST??)
+
+//WHAT? IDK!
+npm install babel-cli babel-preset-env jest supertest superagent
+
+npm install workbox-webpack-plugin
