@@ -16,7 +16,7 @@ const end = '&end_date=';
 //inserts photo based on location by calling Pixabay
 const getPhoto = async () => {
     const city = document.getElementById('city').value;
-    const request = await fetch('/all');
+    const request = await fetch('http://localhost:8083/all');
     try {
         const allData = await request.json();
         const country = allData.country;
@@ -56,7 +56,7 @@ const getCountryPhoto = async (searchTerm) => {
 const getWeather = async () => {
     const tripDate = document.getElementById('depart').value;
     console.log(tripDate);
-    const request = await fetch('/all');
+    const request = await fetch('http://localhost:8083/all');
     try {
         const allData = await request.json();
         const lat = allData.latitude;

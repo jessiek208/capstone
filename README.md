@@ -5,6 +5,8 @@ https://medium.com/@drgenejones/proxying-an-external-api-with-webpack-serve-code
 
 https://codepen.io/rebelchris/pen/gOaZBoo?editors=1111
 
+https://zellwk.com/blog/endpoint-testing/
+
 APIs Utilitized:
 https://restcountries.eu/
 http://www.geonames.org/
@@ -20,8 +22,9 @@ npm i -D style-loader node-sass css-loader sass-loader
 npm i -D html-webpack-plugin
 npm i -D mini-css-extract-plugin
 npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
-
-//WHAT? IDK!
+npm install @babel/plugin-transform-runtime
+npm install regenerator-runtime --save-dev
+npm install supertest --save-dev
 npm install babel-cli babel-preset-env jest supertest superagent
-
 npm install workbox-webpack-plugin
+npm i --save-dev jest-date-mock

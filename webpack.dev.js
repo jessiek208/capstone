@@ -25,17 +25,6 @@ module.exports = {
         }
         ]
     },
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        port: 8082,
-        proxy: {
-            '/api': {
-                target: 'http://localhost:8080',
-                secure: false
-            }
-        }
-    },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",

@@ -1,9 +1,5 @@
 const projectData = {};
 
-const dotenv = require('dotenv');
-dotenv.config();
-
-
 var path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -25,6 +21,11 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
     res.sendFile(path.resolve('dist/index.html'))
 })
+
+//testing - see Sources in README for citation
+app.get('/test', async (req, res) => {
+    res.json({message: 'pass!'})
+  })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8083, function () {
@@ -49,3 +50,5 @@ function addData(req, res){
     console.log(projectData);
     res.send(projectData);
 }
+
+module.exports = app;

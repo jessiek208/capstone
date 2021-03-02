@@ -14,7 +14,7 @@ function performAction(e) {
             const latitude = locationData.postalCodes[0].lat;
             const longitude = locationData.postalCodes[0].lng;
             const country = locationData.postalCodes[0].countryCode;
-            postEntry('/add', { latitude: latitude, longitude: longitude, country: country });
+            postEntry('http://localhost:8083/add', { latitude: latitude, longitude: longitude, country: country });
             Client.getWeather();
             Client.getPhoto();
             Client.tripLength();
