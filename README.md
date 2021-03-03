@@ -1,9 +1,9 @@
-#Capstone
+# Capstone
 
 This capstone project utilizes multiple APIs to help users predict the weather upon their arrival to a destination. Users must specify city and state or country, as well as their departure and arrival dates. The image on the screen will be updated with a destination image. If no image can be found for the city, a country image will be displayed instead. Installation instructsion are below.
 
 
-##Sources:
+## Sources:
 
 https://medium.com/@drgenejones/proxying-an-external-api-with-webpack-serve-code-and-a-restful-data-from-separate-endpoints-4da9b8daf430
 
@@ -11,14 +11,14 @@ https://codepen.io/rebelchris/pen/gOaZBoo?editors=1111
 
 https://zellwk.com/blog/endpoint-testing/
 
-##APIs Utilitized:
+## APIs Utilitized:
 
 https://restcountries.eu/
 http://www.geonames.org/
 https://pixabay.com/
 https://www.weatherbit.io/
 
-##Install:
+## Install:
 ```
 npm install
 npm i webpack webpack-cli 
