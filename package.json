@@ -10,9 +10,6 @@
         "build-prod": "webpack --config webpack.prod.js",
         "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
     },
-    "jest": {
-        "setupFiles": ["jest-date-mock"]
-      },
     "keywords": [],
     "author": "Jessie Krust",
     "license": "ISC",
