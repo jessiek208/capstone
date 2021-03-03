@@ -43,7 +43,6 @@ const getCountryPhoto = async (searchTerm) => {
         const countryInfo = await listResults.json();
         const countryName = countryInfo[0].name;
         const res = await fetch(basePhotoURL + photoAPIKey + searchStart + countryName + tightenResults);
-        console.log(basePhotoURL + photoAPIKey + searchStart + searchTerm + tightenResults);
         const photoResults = await res.json();
         const photoURL = photoResults.hits[0].webformatURL;
         document.getElementById('photo').src = photoURL;
@@ -55,7 +54,6 @@ const getCountryPhoto = async (searchTerm) => {
 //calls weatherbit API based on trip length
 const getWeather = async () => {
     const tripDate = document.getElementById('depart').value;
-    console.log(tripDate);
     const request = await fetch('http://localhost:8083/all');
     try {
         const allData = await request.json();
@@ -64,7 +62,6 @@ const getWeather = async () => {
         if (Client.countDown(tripDate) < 7) {
             const res = await fetch(weatherForecastURL + weatherLat + lat + weatherLon + lon + weatherAPIKey + weatherUnits);
             const weatherData = await res.json();
-            console.log(weatherData);
             const temp = weatherData.data[1].temp;
             const description = weatherData.data[1].weather.description;
             const lowerCaseDescription = description.toLowerCase();
@@ -72,10 +69,8 @@ const getWeather = async () => {
         } else {
             const startDate = lastYear();
             const endDate = addOne();
-            console.log((weatherHistoryURL + weatherLat + lat + weatherLon + lon + start + startDate+ end + endDate + weatherUnits + weatherAPIKey));
             const res = await fetch(weatherHistoryURL + weatherLat + lat + weatherLon + lon + start + startDate + end + endDate + weatherUnits + weatherAPIKey);
             const weatherHistory = await res.json();
-            console.log(weatherHistory);
             const temp = weatherHistory.data[0].temp;
             document.getElementById('weather').innerHTML = `Typical temperature for your arrival is ${temp} farenheit.`;
         }   
