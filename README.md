@@ -14,8 +14,11 @@ https://zellwk.com/blog/endpoint-testing/
 ## APIs Utilitized:
 
 https://restcountries.eu/
+
 http://www.geonames.org/
+
 https://pixabay.com/
+
 https://www.weatherbit.io/
 
 ## Install:
